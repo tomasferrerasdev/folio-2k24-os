@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ExecutableIcons } from "../../Executables";
 import { Navbar } from "../Navbar/Navbar";
 import { Window } from "../Window/Window";
 import styles from "./OS.module.css";
-import { DndContext, DragOverlay } from "@dnd-kit/core";
+import { DndContext } from "@dnd-kit/core";
 import { Coordinates } from "@dnd-kit/core/dist/types";
 import { IconName } from "../Icon/Icon";
 import { useWindowStore } from "../../../store/windows-store";

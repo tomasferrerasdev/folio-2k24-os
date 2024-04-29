@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Icon, IconName } from "../../Icon/Icon";
+import { Icon } from "../../Icon/Icon";
 import styles from "./Tabs.module.css";
 import { useWindowStore } from "../../../../store/windows-store";
 
