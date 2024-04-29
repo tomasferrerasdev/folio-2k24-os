@@ -21,7 +21,7 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
     width,
     height,
   } = osWindow;
-  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
+  const { attributes, listeners, setNodeRef } = useDraggable({
     id: id.toString(),
   });
   const { removeWindow } = useWindowStore();

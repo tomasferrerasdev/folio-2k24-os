@@ -45,7 +45,7 @@ export const About = () => {
           </p>
           <p>
             You can check all the other projects that I've made here following
-            the next link: <a href="">projects</a>
+            the next link: <a>projects</a>
           </p>
           <br />
           <div className="captioned-image">
@@ -60,9 +60,8 @@ export const About = () => {
         <div className={styles.textBlock}>
           <p className={styles.lastChild}>
             If you have any question, comment or just want to contact me I would
-            love to hear it. You can reach me through the{" "}
-            <a href="">contact page</a> or shoot me an email at{" "}
-            <a href="">hellotomasdev@gmail.com</a>
+            love to hear it. You can reach me through the <a>contact page</a> or
+            shoot me an email at <a>hellotomasdev@gmail.com</a>
           </p>
         </div>
       </div>

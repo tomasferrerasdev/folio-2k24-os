@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 
 export const Home = () => {
@@ -8,16 +9,16 @@ export const Home = () => {
       <div>
         <ul>
           <li>
-            <a href="">About</a>
+            <Link to={"/about"}>About</Link>
           </li>
           <li>
-            <a href="">Experience</a>
+            <Link to={"/experience"}>Experience</Link>
           </li>
           <li>
-            <a href="">Projects</a>
+            <Link to={"/projects"}>Projects</Link>
           </li>
           <li>
-            <a href="">Contact</a>
+            <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
       </div>
