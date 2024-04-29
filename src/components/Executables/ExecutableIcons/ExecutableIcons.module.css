@@ -1,0 +1,36 @@
+.executables {
+  display: flex;
+  flex-direction: column !important;
+  gap: 32px;
+  padding: 16px;
+  align-items: center;
+  width: 140px;
+  z-index: 10;
+  position: relative;
+
+  .executable {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+
+    figure {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    p {
+      font-family: MSSerif;
+      color: white;
+      font-size: 16px;
+    }
+  }
+}

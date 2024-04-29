@@ -1,0 +1,36 @@
+.sidebar {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  position: fixed;
+
+  .sidebarTitle {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+    h1 {
+      font-size: 38px;
+      line-height: 32px;
+    }
+
+    p {
+      margin-top: 12px;
+    }
+  }
+
+  .sidebarLinks {
+    display: flex;
+    flex-direction: column;
+    a {
+      h4 {
+        text-decoration: underline;
+        font-family: MillenniumBold;
+        display: flex;
+        margin-bottom: 32px;
+        font-size: 20px;
+      }
+    }
+  }
+}

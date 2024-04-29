@@ -1,0 +1,7 @@
+.icon {
+  image-rendering: pixelated;
+  user-select: none;
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+}

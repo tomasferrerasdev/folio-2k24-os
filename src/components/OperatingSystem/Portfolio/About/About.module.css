@@ -1,0 +1,50 @@
+.about {
+  width: 100%;
+
+  .aboutContent {
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 32px 64px 64px 16px;
+
+    .aboutTitle {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 64px;
+        margin-left: -16px;
+      }
+    }
+
+    .textBlock {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+      margin-top: 16px;
+      text-align: justify;
+
+      p {
+        font-family: Millennium, Times New Roman, Times, serif;
+        font-size: 18px;
+
+        a {
+          font-family: MillenniumBold;
+          text-decoration: underline;
+        }
+      }
+
+      .captioned-image {
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.lastChild {
+  padding-bottom: 32px;
+}
