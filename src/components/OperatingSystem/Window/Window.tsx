@@ -118,19 +118,23 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
               <div className={styles.footerBox}></div>
               <div className={styles.footerBox}></div>
               <div className={styles.footerBoxExtend}></div>
-              <button
-                className={styles.resize}
-                onMouseDown={(event) => {
-                  setInitialSize(windowSize);
-                  setInitialMousePosition({
-                    x: event.clientX,
-                    y: event.clientY,
-                  });
-                  setResizing(true);
-                }}
-              >
-                <Icon icon="resize" />
-              </button>
+              {width && height ? (
+                <></>
+              ) : (
+                <button
+                  className={styles.resize}
+                  onMouseDown={(event) => {
+                    setInitialSize(windowSize);
+                    setInitialMousePosition({
+                      x: event.clientX,
+                      y: event.clientY,
+                    });
+                    setResizing(true);
+                  }}
+                >
+                  <Icon icon="resize" />
+                </button>
+              )}
             </footer>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Icon } from "../../Icon/Icon";
 import styles from "./Contact.module.css";
+import { useState } from "react";
 
 type Inputs = {
   name: string;
@@ -10,6 +11,8 @@ type Inputs = {
 };
 
 export const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState({ message: "", status: "" });
   const {
     register,
     handleSubmit,
@@ -18,6 +21,7 @@ export const Contact = () => {
   } = useForm<Inputs>({ mode: "onChange" });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setLoading(true);
     const res = await fetch("https://folio2k24-node.vercel.app/api/contact", {
       method: "POST",
       headers: {
@@ -25,7 +29,25 @@ export const Contact = () => {
       },
       body: JSON.stringify(data),
     });
-    console.log(res);
+    if (res.ok) {
+      setResponse({
+        message: "Message sent! I will get back to you as soon as possible.",
+        status: "success",
+      });
+    } else {
+      setResponse({
+        message:
+          "An error occurred, please try again later. Or leave a message on <a href='https://www.linkedin.com/in/tomasferreras/'target='_blank'>LinkedIn</a>",
+        status: "error",
+      });
+    }
+    setLoading(false);
+    setTimeout(() => {
+      setResponse({
+        message: "",
+        status: "",
+      });
+    }, 8000);
   };
 
   return (
@@ -116,8 +138,15 @@ export const Contact = () => {
               {...register("message", { required: true })}
             />
             <div className={styles.formButton}>
-              <button disabled={!isValid}>Send Message</button>
+              <button disabled={!isValid || loading}>Send Message</button>
             </div>
+            <br />
+            <p
+              className={`${styles.response} ${
+                response.status === "success" ? styles.success : styles.error
+              }`}
+              dangerouslySetInnerHTML={{ __html: response.message }}
+            ></p>
           </form>
         </div>
       </div>

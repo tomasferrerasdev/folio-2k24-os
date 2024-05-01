@@ -1,61 +1,85 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./MusicPlayer.module.css";
+
 export const MusicPlayer = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.volume = 0.1;
-
-      const handleTimeUpdate = () => {
-        setCurrentTime(videoRef.current!.currentTime);
-      };
-
-      const handleLoadedMetadata = () => {
-        setDuration(videoRef.current!.duration);
-      };
-
-      videoRef.current.addEventListener("timeupdate", handleTimeUpdate);
-      videoRef.current.addEventListener("loadedmetadata", handleLoadedMetadata);
-
-      return () => {
-        videoRef.current!.removeEventListener("timeupdate", handleTimeUpdate);
-        videoRef.current!.removeEventListener(
-          "loadedmetadata",
-          handleLoadedMetadata
-        );
-      };
-    }
-  }, []);
-
-  const progress = (currentTime / duration) * 100 - 1;
+  const songs = [
+    {
+      title: "Masayoshi Takanaka - Tokyo Reggie",
+      audioPath: "/music/tokyo_reggie/music.mp3",
+      coverPath: "/music/tokyo_reggie/cover.jpg",
+    },
+    {
+      title: "Megadeth - Mechanix",
+      audioPath: "/music/mechanix/music.mp3",
+      coverPath: "/music/mechanix/cover.jpg",
+    },
+    {
+      title: "Mac Miller - Complicated",
+      audioPath: "/music/complicated/music.mp3",
+      coverPath: "/music/complicated/cover.jpg",
+    },
+  ];
 
   const handlePlay = () => {
+    const audio: any = audioRef.current;
     if (isPlaying) {
-      videoRef.current?.pause();
+      audio.pause();
     } else {
-      videoRef.current?.play();
+      audio.play();
     }
     setIsPlaying(!isPlaying);
   };
 
-  const formatTime = (timeInSeconds: number) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = Math.floor(timeInSeconds % 60);
-    return `${minutes.toString().padStart(2, "0")}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+
+  const handleNext = () => {
+    setCurrentSongIndex((currentSongIndex + 1) % songs.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentSongIndex((currentSongIndex - 1 + songs.length) % songs.length);
+  };
+
+  useEffect(() => {
+    const audio: any = audioRef.current;
+    audio.volume = 0.1;
+    const setAudioData = () => {
+      setProgress((audio.currentTime / audio.duration) * 100);
+    };
+    audio.addEventListener("timeupdate", setAudioData);
+
+    return () => {
+      audio.removeEventListener("timeupdate", setAudioData);
+    };
+  }, []);
+
+  useEffect(() => {
+    const audio: any = audioRef.current;
+    audio.src = songs[currentSongIndex].audioPath;
+    audio.load();
+    if (isPlaying) {
+      audio.play();
+    }
+  }, [currentSongIndex]);
 
   return (
     <div className={styles.musicPlayerContainer}>
       <div className={styles.albumCover}>
-        <video ref={videoRef} src="/music/complicated/complicated.mp4"></video>
+        <img src={songs[currentSongIndex].coverPath} alt="" />
+        <audio ref={audioRef}>
+          <source src={songs[currentSongIndex].audioPath} type="audio/mpeg" />
+        </audio>
         <div className="text-block">
-          <h3>Mac Miller - Complicated</h3>
+          <h3>{songs[currentSongIndex].title}</h3>
           <p>Original Soundtrack</p>
         </div>
         <div className={styles.musicPlayerProgressbar}>
@@ -65,17 +89,24 @@ export const MusicPlayer = () => {
               style={{ width: `${progress}%` }}
             ></div>
             <div className={styles.progressTimer}>
-              {formatTime(currentTime)} / 03:53
+              {(audioRef.current as unknown as HTMLAudioElement)?.currentTime &&
+                formatTime(
+                  (audioRef.current as unknown as HTMLAudioElement).currentTime
+                )}{" "}
+              /{" "}
+              {formatTime(
+                (audioRef.current as unknown as HTMLAudioElement)?.duration || 0
+              )}
             </div>
           </div>
         </div>
         <br />
         <div className={styles.musicPlayerButtons}>
-          <button>Previous</button>
+          <button onClick={handlePrevious}>Previous</button>
           <button onClick={() => handlePlay()}>
             {isPlaying ? "Pause" : "Play"}
           </button>
-          <button>Next</button>
+          <button onClick={handleNext}>Next</button>
         </div>
       </div>
     </div>
