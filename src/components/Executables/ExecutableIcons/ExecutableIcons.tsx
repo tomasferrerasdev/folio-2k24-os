@@ -36,14 +36,14 @@ const ExecutableIcon = () => {
             id: 2,
             windowTitle: "My Portfolio",
             windowBarColor: "#0000a3",
-            windowBarIcon: "explorer",
+            windowBarIcon: "folio",
             children: <Portfolio />,
             isMinimized: false,
           })
         }
       >
         <figure>
-          <Icon icon="portfolio" size={48} />
+          <Icon icon="folio" size={48} />
         </figure>
         <p>My Portfolio</p>
       </button>

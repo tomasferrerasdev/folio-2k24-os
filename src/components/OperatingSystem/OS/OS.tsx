@@ -42,7 +42,6 @@ export const OS = () => {
               };
             });
           }}
-          onDragMove={() => console.log("move")}
         >
           <div
             key={window.id}

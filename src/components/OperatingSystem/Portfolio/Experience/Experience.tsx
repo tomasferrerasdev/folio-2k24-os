@@ -73,7 +73,6 @@ export const Experience = () => {
           </div>
         </div>
         <div className="text-block">
-          <p>Some text. TODO</p>
           <br />
           <Resume />
         </div>

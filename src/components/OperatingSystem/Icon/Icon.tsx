@@ -13,6 +13,7 @@ import github from "./icons/github.png";
 import resume from "./icons/resume.png";
 import error from "./icons/error.png";
 import music from "./icons/music.png";
+import folio from "./icons/folio.png";
 import styles from "./Icon.module.css";
 
 export type IconName = keyof typeof icons;
@@ -37,6 +38,7 @@ const icons = {
   music: music,
   error: error,
   resume: resume,
+  folio: folio,
 };
 
 export const Icon = ({ icon, size = 16 }: Props) => {
