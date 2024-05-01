@@ -9,6 +9,7 @@ type Window = {
   children: JSX.Element;
   width?: number;
   height?: number;
+  isMinimized: boolean;
 };
 
 type WindowStore = {
@@ -17,6 +18,7 @@ type WindowStore = {
   addWindow: (window: Window) => void;
   removeWindow: (id: number) => void;
   setActiveWindow: (id: number | null) => void;
+  toggleMinimizeWindow: (id: number) => void;
 };
 
 export const useWindowStore = create<WindowStore>((set) => ({
@@ -30,11 +32,21 @@ export const useWindowStore = create<WindowStore>((set) => ({
       if (isWindowOpen) {
         return state;
       }
-      return { openWindows: [...state.openWindows, window] };
+      return {
+        openWindows: [...state.openWindows, { ...window, isMinimized: false }],
+      };
     }),
   removeWindow: (id) =>
     set((state) => ({
       openWindows: state.openWindows.filter((window) => window.id !== id),
     })),
   setActiveWindow: (id) => set(() => ({ activeWindow: id })),
+  toggleMinimizeWindow: (id) =>
+    set((state) => ({
+      openWindows: state.openWindows.map((window) =>
+        window.id === id
+          ? { ...window, isMinimized: !window.isMinimized }
+          : window
+      ),
+    })),
 }));

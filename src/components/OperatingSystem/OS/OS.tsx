@@ -16,6 +16,7 @@ export interface IWindow {
   children: JSX.Element;
   width?: number;
   height?: number;
+  isMinimized: boolean;
 }
 
 export const OS = () => {

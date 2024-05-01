@@ -2,6 +2,7 @@ import { useWindowStore } from "../../../store/windows-store";
 import DosPlayer from "../../OperatingSystem/DOS/DosPlayer";
 import { Icon } from "../../OperatingSystem/Icon/Icon";
 import { MusicPlayer } from "../../OperatingSystem/MusicPlayer/MusicPlayer";
+import { IWindow } from "../../OperatingSystem/OS/OS";
 import { Portfolio } from "../../OperatingSystem/Portfolio/Portfolio";
 import { ResumeViewer } from "../../OperatingSystem/ResumeViewer/ResumeViewer";
 import styles from "./ExecutableIcons.module.css";
@@ -15,19 +16,29 @@ export const ExecutableIcons = () => {
 };
 
 const ExecutableIcon = () => {
-  const { addWindow } = useWindowStore();
+  const { addWindow, openWindows, toggleMinimizeWindow } = useWindowStore();
 
+  const handleClick = (windowId: number, windowConfig: IWindow) => {
+    const existingWindow = openWindows.find((window) => window.id === windowId);
+
+    if (existingWindow && existingWindow.isMinimized) {
+      toggleMinimizeWindow(windowId);
+    } else {
+      addWindow(windowConfig);
+    }
+  };
   return (
     <>
       <button
         className={styles.executable}
         onClick={() =>
-          addWindow({
+          handleClick(2, {
             id: 2,
             windowTitle: "My Portfolio",
             windowBarColor: "#0000a3",
             windowBarIcon: "explorer",
             children: <Portfolio />,
+            isMinimized: false,
           })
         }
       >
@@ -39,12 +50,13 @@ const ExecutableIcon = () => {
       <button
         className={styles.executable}
         onClick={() => {
-          addWindow({
+          handleClick(1, {
             id: 1,
             windowTitle: "Doom",
             windowBarColor: "#1C1C1C",
             windowBarIcon: "doom_icon",
             children: <DosPlayer bundleUrl="doom.jsdos" />,
+            isMinimized: false,
           });
         }}
       >
@@ -56,12 +68,13 @@ const ExecutableIcon = () => {
       <button
         className={styles.executable}
         onClick={() => {
-          addWindow({
+          handleClick(3, {
             id: 3,
             windowTitle: "Resume",
             windowBarColor: "#0000aa",
             windowBarIcon: "resume",
             children: <ResumeViewer />,
+            isMinimized: false,
           });
         }}
       >
@@ -73,7 +86,7 @@ const ExecutableIcon = () => {
       <button
         className={styles.executable}
         onClick={() => {
-          addWindow({
+          handleClick(4, {
             id: 4,
             windowTitle: "Music Player",
             windowBarColor: "#0000aa",
@@ -81,6 +94,7 @@ const ExecutableIcon = () => {
             children: <MusicPlayer />,
             width: 600,
             height: 900,
+            isMinimized: false,
           });
         }}
       >

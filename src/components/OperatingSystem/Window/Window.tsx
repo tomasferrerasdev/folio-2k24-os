@@ -20,11 +20,12 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
     windowTitle,
     width,
     height,
+    isMinimized,
   } = osWindow;
   const { attributes, listeners, setNodeRef } = useDraggable({
     id: id.toString(),
   });
-  const { removeWindow } = useWindowStore();
+  const { removeWindow, toggleMinimizeWindow } = useWindowStore();
   const [resizing, setResizing] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: width ? width : 1200,
@@ -70,6 +71,7 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
           left,
           width: windowSize.width,
           height: windowSize.height,
+          display: isMinimized ? "none" : "flex",
         }}
       >
         <div className={styles.window}>
@@ -87,7 +89,7 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
               </div>
               <div className={styles.windowActions}>
                 <div className={styles.windowActionContent}>
-                  <button>
+                  <button onClick={() => toggleMinimizeWindow(id)}>
                     <Icon icon="minimize" />
                   </button>
                 </div>
