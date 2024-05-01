@@ -29,6 +29,16 @@ export const projects = [
   },
   {
     id: 2,
+    title: "RepoWatcher",
+    description: `RepoWatcher allows users to track their favorite GitHub repositories, receive notifications about new issues, pull requests, or releases, and stay updated with activity on repositories they are interested in.`,
+    image: "/images/extensions.gif",
+    figureCaption: "RepoWatcher Popup",
+    tech: ["React v18", "TypeScript", "TailwindCSS", "GithubAPI"],
+    liveUrl: "https://chromewebstore.google.com/detail/repo-watcher",
+    codeUrl: "https://github.com/tomasferrerasdev/unbridled-spirit",
+  },
+  {
+    id: 3,
     title: "Unbridled Spirit shop",
     description: `Unbridled Spirit is an e-commerce website that allow users to order Bourbon Online and have it delivered directly on their door.`,
     image: "/images/bourbon.png",
