@@ -18,16 +18,13 @@ export const Contact = () => {
   } = useForm<Inputs>({ mode: "onChange" });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const res = await fetch(
-      "https://folio2k24node-tomasferrerasdevs-projects.vercel.app/api/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const res = await fetch("https://folio2k24-node.vercel.app/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     console.log(res);
   };
 
