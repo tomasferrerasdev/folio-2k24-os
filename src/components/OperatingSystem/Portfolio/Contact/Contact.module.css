@@ -48,10 +48,16 @@
   button {
     min-width: 184px;
     height: 32px;
+    border: none;
+    border-radius: 0;
+    box-shadow: inset -1px -1px #2b2b2b, inset 1px 1px #fff,
+      inset -2px -2px grey, inset 2px 2px #747474;
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    box-sizing: border-box;
+    font-family: MillenniumBold, "Times New Roman", Times, serif;
 
     &:disabled {
       background-color: var(--button-shadow);
-      font-family: MillenniumBold, "Times New Roman", Times, serif;
     }
   }
 }

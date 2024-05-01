@@ -7,7 +7,9 @@ export const Resume = () => {
       <img src={printer} alt="" />
       <div className={styles.resumeLink}>
         <h3>Looking for my resume?</h3>
-        <a>Click here to download it!</a>
+        <a href="/resume.pdf" download="tomas_ferreras_resume">
+          Click here to download it!
+        </a>
       </div>
     </div>
   );

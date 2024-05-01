@@ -28,6 +28,7 @@ export const Projects = () => {
               figureCaption,
               codeUrl,
               liveUrl,
+              tech,
             }) => (
               <React.Fragment key={id}>
                 <div className="text-block">
@@ -49,13 +50,24 @@ export const Projects = () => {
                     </sub>
                   </p>
                 </div>
+                <h2>Technologies</h2>
+                <ul>
+                  {tech?.map((technology) => {
+                    return <li key={technology}>{technology}</li>;
+                  })}
+                </ul>
 
+                <br />
                 <h2>Links</h2>
                 <h3>
-                  <a href={`${codeUrl}`}>Github (code)</a>
+                  <a href={`${codeUrl}`} target="_blank">
+                    Github (code)
+                  </a>
                 </h3>
                 <h3>
-                  <a href={`${liveUrl}`}>Website (live)</a>
+                  <a href={`${liveUrl}`} target="_blank">
+                    Website (live)
+                  </a>
                 </h3>
                 <br />
               </React.Fragment>

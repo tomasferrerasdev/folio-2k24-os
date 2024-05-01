@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Resume } from "../Resume/Resume";
 import styles from "./About.module.css";
 
@@ -45,7 +46,7 @@ export const About = () => {
           </p>
           <p>
             You can check all the other projects that I've made here following
-            the next link: <a>projects</a>
+            the next link: <Link to="/projects">projects</Link>
           </p>
           <br />
           <div className="captioned-image">
@@ -60,8 +61,9 @@ export const About = () => {
         <div className={styles.textBlock}>
           <p className={styles.lastChild}>
             If you have any question, comment or just want to contact me I would
-            love to hear it. You can reach me through the <a>contact page</a> or
-            shoot me an email at <a>hellotomasdev@gmail.com</a>
+            love to hear it. You can reach me through the{" "}
+            <Link to="/contact">contact page</Link> or shoot me an email at{" "}
+            <a href="mailto:hellotomasdev@gmail.com">hellotomasdev@gmail.com</a>
           </p>
         </div>
       </div>

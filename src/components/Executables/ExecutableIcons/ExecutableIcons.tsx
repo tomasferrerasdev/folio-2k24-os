@@ -80,7 +80,7 @@ const ExecutableIcon = () => {
             windowBarIcon: "music",
             children: <MusicPlayer />,
             width: 600,
-            height: 950,
+            height: 800,
           });
         }}
       >

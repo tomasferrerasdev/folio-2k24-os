@@ -10,11 +10,6 @@ export const Sidebar = () => {
         <p>Portfolio '24</p>
       </div>
       <div className={styles.sidebarLinks}>
-        <Link to="/">
-          <div>
-            <h4>Home</h4>
-          </div>
-        </Link>
         <Link to="/about">
           <div>
             <h4>About</h4>

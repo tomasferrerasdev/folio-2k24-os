@@ -8,7 +8,9 @@ export const Experience = () => {
         <div className={styles.experienceTitle}>
           <div className={styles.title}>
             <h1>Tuxdi</h1>
-            <a href="https://tuxdi.com/">https://tuxdi.com/</a>
+            <a href="https://tuxdi.com/" target="_blank">
+              https://tuxdi.com/
+            </a>
           </div>
           <div className={styles.subtitle}>
             <h3>Frontend Developer</h3>
@@ -63,7 +65,7 @@ export const Experience = () => {
         <div className={styles.experienceTitle}>
           <div className={styles.title}>
             <h1>Your company</h1>
-            <a href="#">your incredible site</a>
+            <a>your incredible site</a>
           </div>
           <div className={styles.subtitle}>
             <h3>Frontend or backend or both</h3>
@@ -72,6 +74,7 @@ export const Experience = () => {
         </div>
         <div className="text-block">
           <p>Some text. TODO</p>
+          <br />
           <Resume />
         </div>
         <br />
