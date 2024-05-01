@@ -5,6 +5,7 @@ import { Projects } from "./Projects/Projects";
 import { Experience } from "./Experience/Experience";
 import { Contact } from "./Contact/Contact";
 import { Outlet, Route, Routes } from "react-router-dom";
+import { NotFound } from "./NotFound/NotFound";
 
 const Layout = () => {
   return (
@@ -19,12 +20,13 @@ export const Portfolio = () => {
   return (
     <div className={styles.portfolio}>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="about" element={<About />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<About />} />
           <Route path="experience" element={<Experience />} />
           <Route path="projects" element={<Projects />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

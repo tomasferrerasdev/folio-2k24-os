@@ -10,7 +10,7 @@ export const Sidebar = () => {
         <p>Portfolio '24</p>
       </div>
       <div className={styles.sidebarLinks}>
-        <Link to="/about">
+        <Link to="/">
           <div>
             <h4>About</h4>
           </div>

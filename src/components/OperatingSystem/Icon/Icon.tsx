@@ -11,6 +11,7 @@ import window from "./icons/window.png";
 import linkedin from "./icons/linkedin.png";
 import github from "./icons/github.png";
 import resume from "./icons/resume.png";
+import error from "./icons/error.png";
 import music from "./icons/music.png";
 import styles from "./Icon.module.css";
 
@@ -34,6 +35,7 @@ const icons = {
   linkedin: linkedin,
   github: github,
   music: music,
+  error: error,
   resume: resume,
 };
 

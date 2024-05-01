@@ -85,7 +85,7 @@ const ExecutableIcon = () => {
         }}
       >
         <figure>
-          <Icon icon="music" size={56} />
+          <Icon icon="music" size={48} />
         </figure>
         <p>Music Player</p>
       </button>
