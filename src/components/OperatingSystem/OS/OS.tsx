@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ExecutableIcons } from "../../Executables";
 import { Navbar } from "../Navbar/Navbar";
 import { Window } from "../Window/Window";
