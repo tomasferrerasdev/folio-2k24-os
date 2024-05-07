@@ -44,6 +44,8 @@
         }
 
         .progressTimer {
+          position: relative;
+          z-index: 99;
           font-family: Millennium, "Times New Roman", Times, serif;
         }
       }

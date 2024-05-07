@@ -247,6 +247,7 @@ input:active {
 
 .captioned-image img {
   width: 100%;
+  object-fit: contain;
 }
 
 .text-block {
