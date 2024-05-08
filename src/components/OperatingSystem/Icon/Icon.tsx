@@ -14,6 +14,7 @@ import resume from "./icons/resume.png";
 import error from "./icons/error.png";
 import music from "./icons/music.png";
 import folio from "./icons/folio.png";
+import clip from "./icons/clip.png";
 import styles from "./Icon.module.css";
 
 export type IconName = keyof typeof icons;
@@ -39,6 +40,7 @@ const icons = {
   error: error,
   resume: resume,
   folio: folio,
+  clip: clip,
 };
 
 export const Icon = ({ icon, size = 16 }: Props) => {

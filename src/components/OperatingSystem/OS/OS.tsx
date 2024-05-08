@@ -5,7 +5,7 @@ import { Window } from "../Window/Window";
 import styles from "./OS.module.css";
 import { DndContext } from "@dnd-kit/core";
 import { Coordinates } from "@dnd-kit/core/dist/types";
-import { IconName } from "../Icon/Icon";
+import { Icon, IconName } from "../Icon/Icon";
 import { useWindowStore } from "../../../store/windows-store";
 
 export interface IWindow {
@@ -60,6 +60,15 @@ export const OS = () => {
       ))}
       <ExecutableIcons />
       <Navbar />
+      <div className={styles.helper}>
+        <div className={styles.helperText}>
+          <p>
+            If you want to exit just click the "power" button and turn off the
+            computer
+          </p>
+        </div>
+        <Icon icon="clip" size={190} />
+      </div>
     </main>
   );
 };
