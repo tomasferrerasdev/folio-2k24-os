@@ -28,7 +28,7 @@ export const Window = ({ window: osWindow, top, left }: Props) => {
   const { removeWindow, toggleMinimizeWindow } = useWindowStore();
   const [resizing, setResizing] = useState(false);
   const [windowSize, setWindowSize] = useState({
-    width: width ? width : 1200,
+    width: width ? width : 1000,
     height: height ? height : 900,
   });
   const [initialSize, setInitialSize] = useState({ width: 0, height: 0 });
