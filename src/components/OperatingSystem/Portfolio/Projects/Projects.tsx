@@ -29,10 +29,14 @@ export const Projects = () => {
               codeUrl,
               liveUrl,
               tech,
+              date,
             }) => (
               <React.Fragment key={id}>
                 <div className="text-block">
-                  <h2>{title}</h2>
+                  <div className="text-block-title">
+                    <h2>{title}</h2>
+                    <p>{date}</p>
+                  </div>
                   <br />
                   <p>{description}</p>
                 </div>

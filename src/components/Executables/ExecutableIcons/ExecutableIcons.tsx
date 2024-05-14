@@ -4,7 +4,7 @@ import { Icon } from "../../OperatingSystem/Icon/Icon";
 import { MusicPlayer } from "../../OperatingSystem/MusicPlayer/MusicPlayer";
 import { IWindow } from "../../OperatingSystem/OS/OS";
 import { Portfolio } from "../../OperatingSystem/Portfolio/Portfolio";
-import { ResumeViewer } from "../../OperatingSystem/ResumeViewer/ResumeViewer";
+import { GuestBook } from "../../OperatingSystem/ResumeViewer/GuestBook";
 import styles from "./ExecutableIcons.module.css";
 
 export const ExecutableIcons = () => {
@@ -64,24 +64,6 @@ const ExecutableIcon = () => {
           <Icon icon="doom_icon" size={48} />
         </figure>
         <p>Doom</p>
-      </button>
-      <button
-        className={styles.executable}
-        onClick={() => {
-          handleClick(3, {
-            id: 3,
-            windowTitle: "Resume",
-            windowBarColor: "#0000aa",
-            windowBarIcon: "resume",
-            children: <ResumeViewer />,
-            isMinimized: false,
-          });
-        }}
-      >
-        <figure>
-          <Icon icon="resume" size={48} />
-        </figure>
-        <p>Resume</p>
       </button>
       <button
         className={styles.executable}

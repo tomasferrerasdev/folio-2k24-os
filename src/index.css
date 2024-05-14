@@ -269,6 +269,13 @@ input:active {
     margin-top: 4px;
     margin-bottom: 16px;
   }
+
+  .text-block-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .site-page {
