@@ -26,9 +26,10 @@ export const OS = () => {
   }>({});
 
   useEffect(() => {
+    const mouseDown = new Audio(`/music/mouse_down.mp3`);
+    const mouseUp = new Audio(`/music/mouse_up.mp3`);
+
     const playSound = (evt: MouseEvent) => {
-      const mouseDown = new Audio(`/music/mouse_down.mp3`);
-      const mouseUp = new Audio(`/music/mouse_up.mp3`);
       if (evt.type === "mousedown") {
         mouseDown.play();
       } else if (evt.type === "mouseup") {

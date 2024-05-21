@@ -25,6 +25,16 @@ export const MusicPlayer = () => {
     },
   ];
 
+  useEffect(() => {
+    songs.forEach((song) => {
+      const img = new Image();
+      img.src = song.coverPath;
+
+      const audio = new Audio();
+      audio.src = song.audioPath;
+    });
+  }, []);
+
   const handlePlay = () => {
     const audio: any = audioRef.current;
     if (isPlaying) {
