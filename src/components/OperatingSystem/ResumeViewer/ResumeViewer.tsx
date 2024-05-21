@@ -1,5 +1,8 @@
 export const ResumeViewer = () => {
   return (
-    <iframe src="/resume-tomas-ferreras.pdf" style={{ width: "100%" }}></iframe>
+    <img
+      src="/resume.svg"
+      style={{ width: "100%", height: "max-content" }}
+    ></img>
   );
 };
