@@ -1,0 +1,17 @@
+.resumeViewerContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .resumeContainer {
+    padding: 48px 76px 24px 76px;
+    width: 100%;
+  }
+
+  .resumeViewerImage {
+    width: 100%;
+    height: max-content;
+    padding: 24px 76px 24px 76px;
+  }
+}

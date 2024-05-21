@@ -1,8 +1,12 @@
+import { Resume } from "../Portfolio/Resume/Resume";
+import styles from "./ResumeViewer.module.css";
 export const ResumeViewer = () => {
   return (
-    <img
-      src="/resume.svg"
-      style={{ width: "100%", height: "max-content" }}
-    ></img>
+    <div className={styles.resumeViewerContainer}>
+      <div className={styles.resumeContainer}>
+        <Resume />
+      </div>
+      <img className={styles.resumeViewerImage} src="/resume.svg"></img>
+    </div>
   );
 };
