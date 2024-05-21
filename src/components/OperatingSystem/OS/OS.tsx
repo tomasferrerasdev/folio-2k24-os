@@ -25,6 +25,23 @@ export const OS = () => {
     [key: number]: Coordinates;
   }>({});
 
+  useEffect(() => {
+    const playSound = (evt: MouseEvent) => {
+      const mouseDown = new Audio(`/music/mouse_down.mp3`);
+      const mouseUp = new Audio(`/music/mouse_up.mp3`);
+      if (evt.type === "mousedown") {
+        mouseDown.play();
+      } else if (evt.type === "mouseup") {
+        mouseUp.play();
+      }
+    };
+
+    window.addEventListener("mousedown", (e) => playSound(e));
+    window.addEventListener("mouseup", (e) => playSound(e));
+
+    return () => {};
+  }, []);
+
   return (
     <main className={styles.OS}>
       {openWindows.map((window) => (

@@ -13,8 +13,8 @@ export const About = () => {
         <div className={styles.textBlock}>
           <p>
             I'm a software developer with over a year of professional
-            experience, mostly focused on React, Next.js, TypeScript, and
-            Node.js.
+            experience, mostly focused on React, React Native, Next.js,
+            TypeScript, GraphQL and Node.js.
           </p>
         </div>
         <Resume />
