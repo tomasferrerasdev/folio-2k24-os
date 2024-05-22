@@ -49,7 +49,7 @@ export const OS = () => {
         <DndContext
           key={window.id}
           onDragStart={() => setActiveWindow(window.id)}
-          onDragEnd={({ delta }) => {
+          onDragEnd={({ delta }: any) => {
             setCoordinates((prevCoordinates) => {
               return {
                 ...prevCoordinates,
@@ -80,10 +80,7 @@ export const OS = () => {
       <Navbar />
       <div className={styles.helper}>
         <div className={styles.helperText}>
-          <p>
-            If you want to exit just click the "power" button and turn off the
-            computer
-          </p>
+          <p>If you want to exit just click the "power" button</p>
         </div>
         <Icon icon="clip" size={190} />
       </div>
