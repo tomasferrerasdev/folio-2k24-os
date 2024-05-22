@@ -18,11 +18,6 @@ export const MusicPlayer = () => {
       audioPath: "/music/mechanix/music.mp3",
       coverPath: "/music/mechanix/cover.jpg",
     },
-    {
-      title: "Mac Miller - Complicated",
-      audioPath: "/music/complicated/music.mp3",
-      coverPath: "/music/complicated/cover.jpg",
-    },
   ];
 
   useEffect(() => {
