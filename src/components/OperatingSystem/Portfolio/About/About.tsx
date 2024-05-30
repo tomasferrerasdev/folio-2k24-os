@@ -35,7 +35,7 @@ export const About = () => {
             <img src="/images/me.jpeg" alt="" />
             <p>
               <sub>
-                <b>Figure 1:</b>A real photo of me surfing the web in 2005.
+                <b>Figure 1:</b>A real photo of me surfing the web in 2006.
               </sub>
             </p>
           </div>
@@ -54,6 +54,15 @@ export const About = () => {
             <p>
               <sub>
                 <b>Figure 2:</b>Me after a couple years from the previous photo.
+              </sub>
+            </p>
+          </div>
+          <div className="captioned-image">
+            <img src="/images/me-masterclass.png" alt="" />
+            <p>
+              <sub>
+                <b>Figure 3:</b>A photo of me leading a masterclass on animation
+                and frontend technologies for my coworkers. (2024)
               </sub>
             </p>
           </div>
