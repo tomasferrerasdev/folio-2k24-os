@@ -29,7 +29,24 @@ export const projects = [
     liveUrl: "https://enkelhet-shop.vercel.app/",
     codeUrl: "https://github.com/tomasferrerasdev/enkelhet.shop",
   },
-
+  {
+    id: 2,
+    title: "Eucalyptus landing",
+    description: `Eucalyptus Card is a dynamic landing page project showcasing sleek, modern animations designed to captivate and engage visitors. The seamless transitions and interactive elements create an immersive user experience, highlighting the unique features and benefits of the Eucalyptus Card. Perfect for a visually appealing introduction to this innovative product.`,
+    image: "/images/eucalyptus.gif",
+    figureCaption: "Eucalyptus landing page",
+    tech: [
+      "Next.JS v14 (app router)",
+      "TypeScript",
+      "Zustand",
+      "Lottie",
+      "sass",
+      "framer-motion",
+    ],
+    date: "2024",
+    liveUrl: "https://eucalyptus-card.vercel.app/",
+    codeUrl: "https://github.com/tomasferrerasdev/eucalyptus-card",
+  },
   {
     id: 3,
     title: "Unbridled Spirit shop",
